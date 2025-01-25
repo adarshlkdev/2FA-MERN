@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "main": "backend/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/index.js",
-    "dev": "nodemon backend/index.js"
+    "dev": "cross-env NODE_ENV=development nodemon backend/index.js",
+    "start": "cross-env NODE_ENV=production node backend/index.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "2fa",
+    "mern",
+    "nodemailer"
+  ],
+  "author": "Adarsh L K",
   "license": "ISC",
   "type": "module",
   "description": "",
@@ -24,5 +28,8 @@
     "mailtrap": "^3.4.0",
     "mongoose": "^8.9.5",
     "nodemailer": "^6.9.16"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
